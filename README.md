@@ -119,16 +119,19 @@ papers, and online courses, to further your understanding of
 
 👉 You will find these books/links helpful…
 
-- [a
-  href="https://github.com/PacktPublishing/Exploratory-Data-Analysis-with-Python-Cookbook?tab=readme-ov-file"
-  target="_blank"](a%0Ahref=%22https://github.com/PacktPublishing/Exploratory-Data-Analysis-with-Python-Cookbook?tab=readme-ov-file%22%0Atarget=%22_blank%22)Exploratory-Data-Analysis-with-Python-Cookbook
+- <a href="https://github.com/PacktPublishing/Exploratory-Data-Analysis-with-Python-Cookbook?tab=readme-ov-file"
+  target="_blank">Exploratory-Data-Analysis-with-Python-Cookbook</a>
+
 - <a href="https://haralick.org/DV/Handbook_of_Data_Visualization.pdf"
   target="_blank">Handbook of Data Visualization, Chen et al.</a>
-- 
+
+- <a href="https://wesmckinney.com/book/" target="_blank">Python for Data
+  Analysis, Wes M.</a>
+
 - <a href="https://bookdown.org/rdpeng/exdata/"
   target="_blank">Exploratory Data Analysis with R, Roger D. Peng</a>
-- [a
-  href="https://batrachos.com/sites/default/files/pictures/Books/Wickham_Grolemund_2017_R%20for%20Data%20Science.pdf"
-  target="_blank"](a%0Ahref=%22https://batrachos.com/sites/default/files/pictures/Books/Wickham_Grolemund_2017_R%20for%20Data%20Science.pdf%22%0Atarget=%22_blank%22)R for Data Science, Hadley W. and Garrett G.
+
+- <a href="https://batrachos.com/sites/default/files/pictures/Books/Wickham_Grolemund_2017_R%20for%20Data%20Science.pdf"
+  target="_blank">R for Data Science, Hadley W. and Garrett G.</a>
 
 ---
