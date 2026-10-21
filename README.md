@@ -41,16 +41,13 @@ technical and general audiences.
 ## ⌨️ Programming:
 
 > You are free you use your favorite programming language
->  `Python` or
-> …
-
-<div class="panel-tabset">
+>  `Python` or `R`...
 
 ---
 
 # 📋 Course session
 
-> **Visit the course webpage:** 
+> **Visit the course webpage:** [M1-DAS: EDA & Unsupervised Learning](https://hassothea.github.io/M1_DAS_EDA_ITC/){target="_blank"}
 
 # 📋 Midterms, Exams and Projects
 
