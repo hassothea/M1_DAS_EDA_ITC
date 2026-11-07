@@ -131,30 +131,26 @@ window.Quarto = {
 </header>
 
 
-<p><b>Exploratory Data Analysis &amp; Unsuperivsed Learning </b><br> <strong>Course: Dr.&nbsp;HAS Sothea</strong> <br> <strong>TP: Ms.&nbsp;UANN Sreyvi</strong> <br></p>
+<p><b>Exploratory Data Analysis &amp; Unsuperivsed Learning </b><br> <strong>Course: Dr.&nbsp;HAS Sothea</strong></p>
 <hr>
 <p><strong>Objective</strong>: This initial practical session is designed to enhance your understanding of various data variable types and the corresponding statistical and graphical tools suitable for each type.</p>
 <hr>
 <blockquote class="blockquote">
-<p><strong>The <code>Jupyter Notebook</code> for this TP can be downloaded here: <a href="https://hassothea.github.io/I5_EDA_ITC/TPs/TP1_Variable_Types_Descriptive_Statistics.ipynb">TP1-Gapminder</a></strong>.</p>
+<p><strong>The <code>Jupyter Notebook</code> for this TP can be downloaded here: <a href="https://hassothea.github.io/M1_DAS_EDA_ITC/TPs/TP1_Variable_Types_Descriptive_Statistics.ipynb">TP1-Gapminder</a></strong>.</p>
 </blockquote>
 <hr>
 <section id="gapminder-dataset" class="level1">
 <h1>1. <code>Gapminder</code> dataset</h1>
 <p><a href="https://pypi.org/project/gapminder/"><code>Gapminder</code></a> is an excerpt of data available at <a href="https://www.gapminder.org/">https://gapminder.org</a>. For each of <span class="math inline">\(142\)</span> countries (<code>country</code>), the package provides values for life expectancy (<code>lifeExp</code>), GDP per capita (<code>gdpPercap</code>), and population (<code>pop</code>), every five years, from <span class="math inline">\(1952\)</span> to <span class="math inline">\(2007\)</span> (<code>year</code>). It is initially used in <a href="https://github.com/jennybc/gapminder/">Jennifer Bryan’s excellent <code>gapminder</code> teaching package for R</a> (<a href="https://ggplot2.tidyverse.org/"><code>ggplot</code></a>, <a href="https://www.tidyverse.org/"><code>tidyverse</code></a>, and more). For more information about <code>gapminder</code>: - Documentation: <a href="https://www.gapminder.org/data/documentation/">https://www.gapminder.org/data/documentation/</a> - A short demonstration video is available here: <a href="https://youtu.be/jbkSRLYSojo?si=qipg08VIi999hEgo">Hans Rosling’s 200 Countries, 200 Years, 4 Minutes - The Joy of Stats - BBC Four</a>.</p>
-<div id="cell-4" class="cell" data-execution_count="1">
+<div id="cell-4" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># useful packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#%pip install gapminder  (for installing gapminder if you haven't had one)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># %pip install gapminder  (for installing gapminder if you haven't had one)</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gapminder <span class="im">import</span> gapminder</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"* Number of observations: </span><span class="sc">{</span>gapminder<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>gapminder.sample(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>* Number of observations: 1704</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>gapminder.sample(<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -172,31 +168,31 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">1528</th>
-<td>Thailand</td>
+<th data-quarto-table-cell-role="th">796</th>
+<td>Japan</td>
 <td>Asia</td>
 <td>1972</td>
-<td>60.405</td>
-<td>39276153</td>
-<td>1524.358936</td>
+<td>73.42</td>
+<td>107188273</td>
+<td>14778.78636</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">998</th>
-<td>Mongolia</td>
-<td>Asia</td>
-<td>1962</td>
-<td>48.251</td>
-<td>1010280</td>
-<td>1056.353958</td>
+<th data-quarto-table-cell-role="th">401</th>
+<td>Czech Republic</td>
+<td>Europe</td>
+<td>1977</td>
+<td>70.71</td>
+<td>10161915</td>
+<td>14800.16062</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">530</th>
-<td>France</td>
+<th data-quarto-table-cell-role="th">770</th>
+<td>Italy</td>
 <td>Europe</td>
 <td>1962</td>
-<td>70.510</td>
-<td>47124000</td>
-<td>10560.485530</td>
+<td>69.24</td>
+<td>50843200</td>
+<td>8243.58234</td>
 </tr>
 </tbody>
 </table>
@@ -215,8 +211,8 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Hint: You can check the default column types by using <code>gapminder.dtypes</code>. But this may not be accurate because some categorical data may be encoded using numerical values.</p>
 </blockquote>
-<div id="cell-6" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: variable types</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-6" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <blockquote class="blockquote">
 <p><strong>Your response</strong>:</p>
@@ -231,14 +227,14 @@ window.Quarto = {
 <li>Recall the definitions of <strong>skewness</strong> and <strong>kurtosis</strong> introduced in the course.</li>
 <li>Compute these metrics for each quantitative variable and explain the distribution of each variable based on these values.</li>
 </ul>
-<div id="cell-9" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-9" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Graphically represent the distribution of each variable for the year <span class="math inline">\(2002\)</span>. After plotting the distributions, provide a brief explanation for each variable.</li>
 </ol>
 <div id="cell-11" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>According to the data, in 2002:</li>
@@ -250,13 +246,13 @@ window.Quarto = {
 <li>Which country is the unhealthiest?</li>
 </ul>
 <div id="cell-13" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="4" type="1">
 <li>Repeat the previous question for the year 1977. Before computing, can you guess which country had the lowest life expectancy around that year?</li>
 </ol>
 <div id="cell-15" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="qualitative-variables" class="level2">
@@ -275,19 +271,19 @@ window.Quarto = {
 <p>Hint: you may find <code>pd.cut</code> function helpful.</p>
 </blockquote>
 <div id="cell-18" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Compute the appropriate statistical values and graphically represent the distribution of each newly created qualitative variable.</li>
 </ol>
 <div id="cell-20" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Graphically represent them and describe the graph.</li>
 </ul>
 <div id="cell-22" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -298,22 +294,17 @@ window.Quarto = {
 <section id="evolution-of-quantitative-columns" class="level2">
 <h2 class="anchored" data-anchor-id="evolution-of-quantitative-columns">3.1. Evolution of quantitative columns</h2>
 <ol type="1">
-<li>Create a line plot of <code>lifeExp</code> for the five continents from <span class="math inline">\(1952\)</span> to <span class="math inline">\(2007\)</span> using <code>sns.lineplot</code>. What observations can you make from the plot?</li>
+<li><p>Create a line plot of <code>lifeExp</code> for the five continents from <span class="math inline">\(1952\)</span> to <span class="math inline">\(2007\)</span> using <code>sns.lineplot</code>. What observations can you make from the plot?</p></li>
+<li><p>Repeat the same process with <code>pop</code>, and then with <code>gdpPercap</code>. Provide your comments for each case.</p></li>
 </ol>
-<div id="cell-24" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ol start="2" type="1">
-<li>Repeat the same process with <code>pop</code>, and then with <code>gdpPercap</code>. Provide your comments for each case.</li>
-</ol>
-<div id="cell-26" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-26" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>Plot the evolution of each of the three quantitative variables for <strong>Cambodia</strong> vs <strong>Thailand</strong>. Describe the graphs.</li>
 </ol>
-<div id="cell-28" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-28" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="evolution-of-qualitative-columns" class="level2">
@@ -321,14 +312,14 @@ window.Quarto = {
 <ol type="1">
 <li>Visualize the evolution of <code>lifeExpQual</code> column in <strong>Asia</strong> from 1952 to 2007. What do you observe?</li>
 </ol>
-<div id="cell-31" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-31" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="2" type="1">
 <li>Do the same with <code>popQual</code> and <code>dgpQual</code> columns.</li>
 </ol>
-<div id="cell-34" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-34" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To do</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol start="3" type="1">
 <li>Visualize the evolution of the three qualitative columns above for African countries from 1952 to 2007.</li>
